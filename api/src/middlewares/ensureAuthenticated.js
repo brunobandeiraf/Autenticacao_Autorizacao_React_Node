@@ -12,10 +12,12 @@ function ensureAuthenticated(request, response, next) {
   const [, token] = authHeader.split(' ');
 
   try {
-    const { sub: user_id } = verify(token, authConfig.jwt.secret);
+    const { role, sub: user_id } = verify(token, authConfig.jwt.secret);
 
+    // Retornando na requisição do usuário as credenciais de acesso (autorização)
     request.user = {
       id: Number(user_id),
+      role
     };
 
     return next();
