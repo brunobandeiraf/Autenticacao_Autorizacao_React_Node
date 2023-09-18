@@ -2,3 +2,6 @@
 
 - React
 - NodeJS
+
+# Banco de Dados
+- npm run migrate
