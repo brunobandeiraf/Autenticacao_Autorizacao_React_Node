@@ -9,7 +9,9 @@ const salesRoutes = Router();
 const salesController = new SalesController();
 
 salesRoutes.use(ensureAuthenticated);
-salesRoutes.use(verifyUserAuthorization("admin")) // Autorização p/ somente admin
+// Autorização p/ somente admin
+// Todas as rotas
+salesRoutes.use(verifyUserAuthorization(["admin"])) 
 
 salesRoutes.get("/", salesController.index);
 
