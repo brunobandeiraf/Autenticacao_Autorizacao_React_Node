@@ -6,7 +6,7 @@ import { NotFound } from '../pages/NotFound';
 import { Suppliers } from '../pages/Suppliers';
 import { SalesReport } from '../pages/SalesReport';
 
-export function AppRoutes() {
+export function AdminRoutes() {
   return (
     <Routes>
       <Route path="/" element={< Home />} />
@@ -14,6 +14,7 @@ export function AppRoutes() {
       <Route path="/sales-report" element={<SalesReport />} />
       <Route path="/suppliers" element={<Suppliers />} />
 
+      {/* Se não tive nenhuma rota cadastrada*/}
       <Route path="*" exact={true} element={<NotFound />} />
     </Routes>
   );
