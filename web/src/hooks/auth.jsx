@@ -44,7 +44,7 @@ function AuthProvider({ children }) {
   useEffect(() => {
     const user = localStorage.getItem("@estock:user");
 
-    if (token && user) {
+    if (user) {
 
       setData({
         user: JSON.parse(user)

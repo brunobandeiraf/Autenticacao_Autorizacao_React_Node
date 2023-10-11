@@ -1,4 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
+import { useEffect } from 'react';
 
 import { useAuth } from "../hooks/auth";
 import { USER_ROLE } from '../utils/roles' 
@@ -7,6 +8,8 @@ import { CustomerRoutes } from './customer.routes';
 import { AdminRoutes } from './admin.routes';
 import { SaleRoutes } from './sale.routes';
 import { AuthRoutes } from './auth.routes';
+
+import { api } from "../services/api";
 
 export function Routes() {
   const { user, signOut } = useAuth();
