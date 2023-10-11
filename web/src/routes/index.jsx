@@ -14,8 +14,14 @@ export function Routes() {
   useEffect(() => {
     api
       .get('/users/validated')
-      .catch((error) => signOut()) 
+      .catch((error) => {
+        // ? pq pode ser nulo  
+        // desloca se não for um usuário autorizado
+        if(error.response?.status === 401){
+          signOut()
 
+        }
+      }) 
   },[])
 
   function AccessRoute(){
